@@ -1,6 +1,6 @@
 # Portfolio
 
-**Personal Portfolio | Aspiring Data Scientist**
+**Shreya Gupta | Aspiring Data Scientist**
 
 ---
 
@@ -66,5 +66,5 @@ Simply open `index.html` in any modern web browser. There's no server or build s
 - LinkedIn: https://www.linkedin.com/in/shreya-gupta-42a775326/
 - Email: akshreyagupta28@gmail.com
 - GitHub: https://github.com/akshreyagupta28-source
-- Live Portfolio: https://akshreyagupta28-source.github.io/portfolio/
+
 

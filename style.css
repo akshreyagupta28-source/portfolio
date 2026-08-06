@@ -1,4 +1,4 @@
-/* ==========================================================================
+th/* ==========================================================================
    Cyberpunk Glassmorphism Portfolio Styles
    ========================================================================== */
 
@@ -874,22 +874,125 @@ footer {
 .delay-2 { transition-delay: 0.4s; }
 
 /* --- Responsive Design --- */
+
+/* Mobile Menu (hidden by default, shown in mobile breakpoint) */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    max-width: 320px;
+    height: 100vh;
+    background: rgba(10, 14, 39, 0.98);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-left: 1px solid rgba(0, 255, 249, 0.2);
+    z-index: 2000;
+    transition: right 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    overflow-y: auto;
+}
+
+.mobile-menu.open {
+    right: 0;
+}
+
+.mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu-close {
+    font-size: 1.8rem;
+    color: var(--magenta);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.mobile-menu-close:hover {
+    color: white;
+    transform: rotate(90deg);
+    text-shadow: 0 0 10px var(--magenta);
+}
+
+.mobile-nav-links li {
+    margin-bottom: 1.2rem;
+}
+
+.mobile-nav-link {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    padding: 0.8rem 0;
+    color: var(--text-main);
+    border-left: 3px solid transparent;
+    padding-left: 1rem;
+    transition: var(--transition);
+}
+
+.mobile-nav-link:hover {
+    color: var(--cyan);
+    border-left-color: var(--cyan);
+    text-shadow: 0 0 8px rgba(0, 255, 249, 0.5);
+    padding-left: 1.5rem;
+}
+
+.mobile-nav-link.active {
+    color: var(--cyan);
+    border-left-color: var(--cyan);
+}
+
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1500;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.menu-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Fluid typography on all screens */
+.hero-title {
+    font-size: clamp(2.2rem, 8vw, 5rem);
+}
+
 @media (max-width: 992px) {
     .about-grid, .contact-wrapper {
         grid-template-columns: 1fr;
     }
-    
+
     .hero-content {
         margin-left: 0;
         text-align: center;
     }
-    
+
     .hero-cta {
         justify-content: center;
     }
-    
-    .glitch {
-        font-size: 3.5rem;
+
+    .hero-desc {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .section {
+        padding: 80px 0;
     }
 }
 
@@ -897,32 +1000,144 @@ footer {
     .nav-links {
         display: none;
     }
-    
+
     .hamburger {
         display: block;
     }
-    
-    .glitch {
-        font-size: 2.5rem;
-    }
-    
+
     .subtitle {
         font-size: 1.5rem;
     }
-    
+
     .section-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
     }
-    
+
+    .section-title::after {
+        margin-left: 10px;
+    }
+
     .timeline::before {
         left: 10px;
     }
-    
+
     .timeline-dot {
         left: 4px;
     }
-    
+
     .timeline-item {
         padding-left: 40px;
+    }
+
+    .container {
+        padding: 0 1.5rem;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .hero-desc {
+        font-size: 1.05rem;
+    }
+
+    .about-image-container {
+        max-width: 220px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .timeline-content {
+        padding: 1.25rem;
+    }
+
+    .timeline-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .contact-card {
+        padding: 2rem;
+    }
+
+    .contact-wrapper {
+        gap: 1.5rem;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .hero-cta .btn {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 16px;
+    }
+
+    .greeting {
+        font-size: 1rem;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .section-title::after {
+        display: none;
+    }
+
+    .glass-card {
+        padding: 1.5rem;
+    }
+
+    .about-text p {
+        font-size: 1rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-img-wrapper {
+        height: 160px;
+    }
+
+    .social-icons {
+        gap: 1rem;
+    }
+
+    .social-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 1.2rem;
+    }
+
+    .btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .mobile-menu {
+        width: 85%;
     }
 }

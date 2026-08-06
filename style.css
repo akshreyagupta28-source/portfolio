@@ -157,6 +157,11 @@ ul {
 .neon-text-magenta { color: var(--magenta); text-shadow: 0 0 5px rgba(255, 42, 109, 0.5); }
 .neon-text-purple { color: var(--purple); text-shadow: 0 0 5px rgba(138, 43, 226, 0.5); }
 
+/* Ensure spacing between section number and title text (flex collapses whitespace) */
+.section-title .white-text {
+    margin-left: 0.5rem;
+}
+
 /* --- Components --- */
 /* Glass Card */
 .glass-card {
